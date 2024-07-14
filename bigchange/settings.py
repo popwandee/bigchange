@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ekpg358&uf^x3!*^h%lp2f($x#a%jx=9!!-3sz#3ix=w6*_!zy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bigchange.onrender.com','localhost','127.0.0.1']
 
 
 # Application definition
