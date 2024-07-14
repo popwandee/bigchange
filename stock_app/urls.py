@@ -21,7 +21,7 @@ from . import views
 # stock_app/urls.py
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('stock_admin/', admin.site.urls,name='stock_admin'),
     path('', views.stock_list, name='stock_list'),
     path('stock/<int:stock_id>/', views.stock_detail, name='stock_detail'),
     path('add_stock/', views.add_stock, name='add_stock'),
