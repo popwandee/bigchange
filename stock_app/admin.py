@@ -5,5 +5,5 @@ from .models import Stock
 
 @admin.register(Stock)
 class StockAdmin(admin.ModelAdmin):
-    list_display = ('name', 'ev_ebitda', 'details')  # Customize as needed
+    list_display = ('name', 'ev','ebitda','ev_ebitda', 'detail')  # Customize as needed
 
