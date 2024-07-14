@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: bigchange-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn bigchange.wsgi:application --bind 0.0.0.0:8000
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        value: django-insecure-ekpg358&uf^x3!*^h%lp2f($x#a%jx=9!!-3sz#3ix=w6*_!zy
+      - key: DB_NAME
+        value: stock_factsheet
+      - key: DB_USER
+        value: stock_factsheet_user
+      - key: DB_PASSWORD
+        value: 13WDTr4MeMzgbRnfqCMqrBpbVZVtuu3p
+      - key: DB_HOST
+        value: dpg-cq9nje5ds78s739g5q8g-a
+      - key: DB_PORT
+        value: 5432
