@@ -18,8 +18,6 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
-urlpatterns = [
-]
 # stock_app/urls.py
 
 urlpatterns = [

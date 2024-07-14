@@ -6,7 +6,7 @@ from .forms import StockForm
 
 def stock_list(request):
     stocks = Stock.objects.all()
-    return render(request, 'myapp/stock_list.html', {'stocks': stocks})
+    return render(request, 'stock_app/stock_list.html', {'stocks': stocks})
 
 def stock_list_ev_ebitda(request):
     stocks = Stock.objects.all()
@@ -25,7 +25,7 @@ def add_stock(request):
             return redirect('stock_list')
     else:
         form = StockForm()
-    return render(request, 'myapp/add_stock.html', {'form': form})
+    return render(request, 'stock_app/add_stock.html', {'form': form})
 
 def update_stock(request, stock_id):
     stock = get_object_or_404(Stock, id=stock_id)
@@ -36,11 +36,11 @@ def update_stock(request, stock_id):
             return redirect('stock_list')
     else:
         form = StockForm(instance=stock)
-    return render(request, 'myapp/update_stock.html', {'form': form})
+    return render(request, 'stock_app/update_stock.html', {'form': form})
 
 def delete_stock(request, stock_id):
     stock = get_object_or_404(Stock, id=stock_id)
     if request.method == 'POST':
         stock.delete()
         return redirect('stock_list')
-    return render(request, 'myapp/delete_stock.html', {'stock': stock})
+    return render(request, 'stock_app/delete_stock.html', {'stock': stock})
