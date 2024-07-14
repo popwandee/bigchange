@@ -1,9 +1,0 @@
-<h2>Stock List</h2>
-<ul>
-    {% for stock in stocks %}
-        <li>{{ stock.name }} - EV/EBITDA: {{ stock.ev_ebitda }}</li>
-        <a href="{% url 'update_stock' stock.id %}">Update</a>
-        <a href="{% url 'delete_stock' stock.id %}">Delete</a>
-    {% endfor %}
-</ul>
-<a href="{% url 'add_stock' %}">Add New Stock</a>
