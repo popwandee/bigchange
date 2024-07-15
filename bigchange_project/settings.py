@@ -11,16 +11,20 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dj_database_url
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv()  # This will load the environment variables from the .env file
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l5ebq)y2x!2w5%2qf@kc@xa$+yg2t(wzl54gth9@7-g77@@(=i'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -72,12 +76,20 @@ WSGI_APPLICATION = 'bigchange_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+# Determine if running on Render.com
+ON_RENDER = os.getenv('RENDER') is not None
+
+if ON_RENDER:
+    DATABASE_URL = os.getenv('INTERNAL_DATABASE_URL')
+else:
+    DATABASE_URL = os.getenv('EXTERNAL_DATABASE_URL')
 
 DATABASES = {
-    'default': {
+    'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
+    'default': dj_database_url.parse(DATABASE_URL)
 }
 
 
