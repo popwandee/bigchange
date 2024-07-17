@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Application</title>
+</head>
+<body>
+    <h1>Stock Information</h1>
+    <table border="1">
+        <tr>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Market Cap</th>
+            <th>EV</th>
+            <th>EV/EBITDA</th>
+            <th>P/E</th>
+            <th>P/BV</th>
+            <th>ROE</th>
+            <th>ROA</th>
+            <th>D/E</th>
+        </tr>
+        {% for stock in stocks %}
+        <tr>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.price }}</td>
+            <td>{{ stock.market_cap }}</td>
+            <td>{{ stock.ev }}</td>
+            <td>{{ stock.ev_ebitda }}</td>
+            <td>{{ stock.pe_ratio }}</td>
+            <td>{{ stock.pbv_ratio }}</td>
+            <td>{{ stock.roe }}</td>
+            <td>{{ stock.roa }}</td>
+            <td>{{ stock.de_ratio }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
