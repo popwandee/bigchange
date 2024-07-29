@@ -10,6 +10,7 @@ phases:
       - pip freeze
   build:
     commands:
+      - source venv/bin/activate
       - python manage.py makemigrations
       - python manage.py migrate
   post_build:
