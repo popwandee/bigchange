@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11  # Use the appropriate Python version
+    commands:
+      - pip install --upgrade pip
+      - pip install -r requirements.txt
+  build:
+    commands:
+      - python manage.py makemigrations
+      - python manage.py migrate
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
+artifacts:
+  files:
+    - '**/*'
