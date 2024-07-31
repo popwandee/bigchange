@@ -6,4 +6,5 @@ urlpatterns = [
     path('stock_list/', views.stock_list, name='stock_list'),
     path('load_data/', views.load_data, name='load_data'),
     path('apply_filter/', views.apply_filter, name='apply_filter'),
+    path('upload/', views.upload_csv, name='upload_csv'),
 ]

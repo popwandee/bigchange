@@ -1,8 +1,10 @@
 from django.db import models
 
 # Create your models here.
+from django.db import models
+
 class Stock(models.Model):
-    symbol = models.CharField(max_length=10,default='aa')
+    symbol = models.CharField(max_length=10, default='a')
     price = models.FloatField(default=0)
     market_cap = models.FloatField(default=0)
     ev = models.FloatField(default=0)
