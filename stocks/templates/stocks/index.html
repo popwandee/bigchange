@@ -18,19 +18,20 @@
                 </tr>
                 {% for stock in stocks %}
                 <tr>
-                    <td>{{ stock.Symbol }}</td>
-                    <td>{{ stock.Price }}</td>
-                    <td>{{ stock.Market_cap }}</td>
-                    <td>{{ stock.EV }}</td>
-                    <td>{{ stock.EV_EBITDA }}</td>
-                    <td>{{ stock.P_E }}</td>
-                    <td>{{ stock.P_BV }}</td>
-                    <td>{{ stock.ROE_Q12024 }}</td>
-                    <td>{{ stock.ROA_Q12024 }}</td>
-                    <td>{{ stock.D_E_Q12024 }}</td>
+                    <td>{{ stock.symbol }}</td>
+                    <td>{{ stock.price }}</td>
+                    <td>{{ stock.market_cap }}</td>
+                    <td>{{ stock.ev }}</td>
+                    <td>{{ stock.ev_ebitda }}</td>
+                    <td>{{ stock.p_e }}</td>
+                    <td>{{ stock.p_bv }}</td>
+                    <td>{{ stock.roe_q12024 }}</td>
+                    <td>{{ stock.roa_q12024 }}</td>
+                    <td>{{ stock.d_e_q12024 }}</td>
                 </tr>
                 {% endfor %}
             </table>
+            
             {% endblock %}
         </div>
        
