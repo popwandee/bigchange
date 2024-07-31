@@ -5,6 +5,7 @@ from django.db import models
 
 class Stock(models.Model):
     symbol = models.CharField(max_length=10, default='a')
+    '''
     Paid_up = models.FloatField(default=0)
     MarketCap = models.FloatField(default=0)
     EV = models.FloatField(default=0)
@@ -283,6 +284,6 @@ class Stock(models.Model):
     Cash_Cycle_Days_YE2023 = models.FloatField(default=0)
     Cash_Cycle_Days_Q12023 = models.FloatField(default=0)
     Cash_Cycle_Days_Q12024 = models.FloatField(default=0)
-
+'''
     def __str__(self):
         return self.symbol
